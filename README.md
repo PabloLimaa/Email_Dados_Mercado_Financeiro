@@ -1,47 +1,66 @@
-## Sistema de Agendamento de Cortes para Barbearia
-Este projeto é uma aplicação desenvolvida como parte do material didático da disciplina Desenvolvimento Full Stack Básico oferecida pela PUC-Rio. O sistema foi criado para demonstrar e aplicar conceitos fundamentais de desenvolvimento front-end adquiridos durante o curso.
+## Relatório Diário do Mercado Financeiro
+Este projeto em Python coleta dados econômicos do mercado financeiro (cotações e taxas de juros) e gera gráficos para compor um relatório diário. Em seguida, o relatório é enviado por e-mail automaticamente.
 
-## Objetivo
-O sistema permite aos usuários agendar serviços em uma barbearia, escolhendo datas, horários, tipo de corte, e barbeiros específicos. O foco está na interatividade do usuário com a aplicação, sem necessidade de recarregamento da página, proporcionando uma experiência fluida e dinâmica.
+## Funcionalidades
+Coleta de dados da Selic, IPCA, CDI, IGP-M, Dólar, Euro e Libra através de APIs.
+Geração de gráficos utilizando Matplotlib (com estilo Cyberpunk).
+Criação de um relatório diário em HTML com gráficos embutidos.
+Envio do relatório por e-mail utilizando o smtplib do Python.
 
-## Sobre a API externa - Utilizando a API OpenWeather
-A API OpenWeather oferece acesso a uma vasta gama de dados meteorológicos, incluindo previsões do tempo, dados históricos e informações em tempo real. Essa API é ideal para projetos que necessitam de integração de dados meteorológicos precisos e atualizados.
-##Configuração Inicial
-Obter a chave da API: Para utilizar a API OpenWeather, primeiro é necessário criar uma conta no site [OpenWeather](https://openweathermap.org/) e gerar uma chave API gratuita ou paga, dependendo do volume de acessos e dos dados necessários.
-Configurar o ambiente de desenvolvimento: Adicione a chave da API ao seu projeto. Recomenda-se armazenar esta chave em variáveis de ambiente ou em um arquivo de configuração seguro para proteger suas credenciais.
-Nesse projeto armazenamos a chave da seguinte forma: const apiKey = "insira aqui sua chave"; (essa variável está dentro da pasta API_Externa_Weather, no inicio do arquivo js script).
-
-## Tecnologias Utilizadas
-Este projeto utiliza HTML, CSS, e JavaScript para criar um sistema eficiente e responsiva. O sistema é totalmente executado no lado do cliente, utilizando localStorage para simular o armazenamento de dados.
-
-
-## Como Executar
-Para executar este projeto localmente, siga as instruções abaixo:
-
-1° Faça o download ou clone este repositório em sua máquina local:
+## Pré-requisitos
+Python 3.x
+Bibliotecas Python:
+requests
+pandas
+matplotlib
+mplcyberpunk
+python-bcb (para dados econômicos do Banco Central)
+Instale as dependências com:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-projeto.git
+Copiar código
+pip install requests pandas matplotlib mplcyberpunk python-bcb
 ```
 
-2° Navegue até o diretório do projeto, acesse o diretório onde o projeto foi clonado:
+## Configuração
+Clone este repositório:
 
 ```bash
-cd seu-projeto
+Copiar código
+git clone https://github.com/seu_usuario/seu_repositorio.git
+cd seu_repositorio
 ```
 
-3° Abra o arquivo index.html em seu navegador preferido. Você pode simplesmente dar um duplo clique no arquivo ou usar o seguinte comando:
+## Substitua os campos de email e senha no código:
 
-```bash
-open index.html
+```python
+Copiar código
+email = "seu_email@gmail.com"
+senha_do_email = "sua_senha"
 ```
 
-Isso abrirá o projeto em seu navegador padrão, onde você poderá testar todas as funcionalidades do sistema de agendamento.
+Caso prefira manter a senha do email em um arquivo senha.txt, crie um arquivo no mesmo diretório e adicione a senha.
+
+Certifique-se de que as APIs estejam disponíveis e funcionando antes de executar o script.
+
+## Resultados
+Gráficos gerados:
+  Gráfico da Taxa Selic ao longo do tempo.
+  Gráfico comparativo do IPCA e IGP-M.
+  Gráfico de cotações do Dólar e Euro.
+Arquivos anexados ao e-mail:
+  selic.png: Gráfico da Selic.
+  inflacao.png: Gráfico comparativo do IPCA e IGP-M.
+  grafico_dolar_euro.png: Gráfico das cotações do Dólar e Euro.
+  cotacoes_dolar_euro.xlsx: Tabela de cotações do Dólar e Euro.
+## Observações
+  O código precisa ser adaptado para incluir seus dados de e-mail e senha, garantindo a segurança dessas informações.
+  O envio de e-mails utiliza o servidor SMTP do Gmail (porta 465). Verifique as configurações de segurança da sua conta para habilitar o uso de aplicativos menos seguros.
+  As APIs utilizadas para coleta de dados são públicas, mas podem ter limites de requisições por hora.
 
 ## Contato
 Se você tiver alguma dúvida, feedback ou sugestão, não hesite em entrar em contato comigo:
 
-Nome: Pablo Henrique Costa de Lima  
 E-mail: pablo.henriquelima07@gmail.com  
 LinkedIn: https://www.linkedin.com/in/pablo-henrique-lima-542300164/    
 
